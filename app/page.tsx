@@ -13,10 +13,12 @@ const DEFAULT_BG =
 
 function calculateResults(selectedAnswers: PersonalityType[]) {
   const counts: Record<PersonalityType, number> = {
-    "Bold Adventurer": 0,
-    "Sweet Enthusiast": 0,
-    "Health Nut": 0,
-    "Zen Minimalist": 0,
+    "Bold Pioneer": 0,
+    "Smooth Traditionalist": 0,
+    "Curious Explorer": 0,
+    "Cozy Campfire": 0,
+    "Mindful Purist": 0,
+    "Social Trailblazer": 0,
   };
 
   for (const p of selectedAnswers) {
@@ -200,19 +202,19 @@ export default function Home() {
                   {personalities[primaryResult.name].description}
                 </p>
 
-                {/* Your recommended coffee */}
+                {/* Your recommended drinks */}
                 <div
-                  className="text-center mb-8 py-4 px-6 rounded-xl"
+                  className="text-center mb-8 py-5 px-6 rounded-xl"
                   style={{ backgroundColor: "rgba(139,111,71,0.1)" }}
                 >
                   <p
-                    className="text-sm font-medium uppercase tracking-wider mb-1"
+                    className="text-sm font-medium uppercase tracking-wider mb-3"
                     style={{ color: "var(--color-accent)" }}
                   >
-                    Your Basecamp Order
+                    Your Basecamp Drinks
                   </p>
                   <p
-                    className="font-serif text-2xl font-semibold"
+                    className="font-serif text-2xl font-semibold mb-3"
                     style={{
                       fontFamily: "Lora, serif",
                       color: "var(--color-dark-brown)",
@@ -220,6 +222,26 @@ export default function Home() {
                   >
                     {personalities[primaryResult.name].coffee}
                   </p>
+                  <div className="flex flex-col gap-1">
+                    <p
+                      className="text-sm"
+                      style={{ color: "var(--color-text-light)" }}
+                    >
+                      Also try:{" "}
+                      <span className="font-medium">
+                        {personalities[primaryResult.name].alsoTry}
+                      </span>
+                    </p>
+                    <p
+                      className="text-sm"
+                      style={{ color: "var(--color-text-light)" }}
+                    >
+                      Seasonal pick:{" "}
+                      <span className="font-medium">
+                        {personalities[primaryResult.name].seasonal}
+                      </span>
+                    </p>
+                  </div>
                 </div>
 
                 {/* Full breakdown */}
@@ -280,6 +302,15 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
+
+                {/* Share prompt */}
+                <p
+                  className="text-center text-sm mb-6 italic"
+                  style={{ color: "var(--color-text-light)" }}
+                >
+                  Know someone who&apos;d love this? Share your coffee
+                  personality with a friend.
+                </p>
 
                 {/* Retake button */}
                 <div className="text-center">

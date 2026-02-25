@@ -1,8 +1,10 @@
 export type PersonalityType =
-  | "Bold Adventurer"
-  | "Sweet Enthusiast"
-  | "Health Nut"
-  | "Zen Minimalist";
+  | "Bold Pioneer"
+  | "Smooth Traditionalist"
+  | "Curious Explorer"
+  | "Cozy Campfire"
+  | "Mindful Purist"
+  | "Social Trailblazer";
 
 export interface Answer {
   text: string;
@@ -18,38 +20,66 @@ export interface Question {
 export interface PersonalityResult {
   name: PersonalityType;
   coffee: string;
+  alsoTry: string;
+  seasonal: string;
   tagline: string;
   description: string;
 }
 
 export const personalities: Record<PersonalityType, PersonalityResult> = {
-  "Bold Adventurer": {
-    name: "Bold Adventurer",
+  "Bold Pioneer": {
+    name: "Bold Pioneer",
     coffee: "Double Espresso",
-    tagline: "You live for intensity",
+    alsoTry: "Red Eye",
+    seasonal: "Spiced Cayenne Mocha",
+    tagline: "Life's too short for timid coffee",
     description:
-      "You charge headfirst into the unknown and thrive on adrenaline. Your coffee should hit just as hard as you do.",
+      "You charge headfirst into the unknown and thrive on intensity. First in line for the new limited release, first to suggest the after-hours espresso, first to say yes. Your coffee should match your energy — unapologetic and full-throttle.",
   },
-  "Sweet Enthusiast": {
-    name: "Sweet Enthusiast",
-    coffee: "Caramel Latte",
-    tagline: "Life's too short for bitter",
+  "Smooth Traditionalist": {
+    name: "Smooth Traditionalist",
+    coffee: "Classic House Blend",
+    alsoTry: "Café au Lait",
+    seasonal: "Maple Cinnamon Drip",
+    tagline: "Some things never need fixing",
     description:
-      "You find joy in every little thing and believe the world could always use a bit more sweetness. Your coffee is a treat, not just a drink.",
+      "There's a reason classics endure — you know this better than anyone. You find your groove and stick with it, and your loyalty runs deep. Your coffee order hasn't changed in years, and it doesn't need to.",
   },
-  "Health Nut": {
-    name: "Health Nut",
-    coffee: "Oat Milk Americano",
-    tagline: "Wellness in every sip",
+  "Curious Explorer": {
+    name: "Curious Explorer",
+    coffee: "Seasonal Pour-Over",
+    alsoTry: "Lavender Oat Latte",
+    seasonal: "Single Origin Flight",
+    tagline: "There's always something new to discover",
     description:
-      "You treat your body like the temple it is and your mornings start with intention. Your coffee fuels your best self.",
+      "You'd rather try something new and be surprised than stick with what you know. For you, the menu is just a starting point. You're always asking baristas 'What's new?' and your coffee journey is far from over.",
   },
-  "Zen Minimalist": {
-    name: "Zen Minimalist",
-    coffee: "Black Coffee, Single Origin",
-    tagline: "Simple. Clean. Perfect.",
+  "Cozy Campfire": {
+    name: "Cozy Campfire",
+    coffee: "Caramel Vanilla Latte",
+    alsoTry: "Chai Tea Latte",
+    seasonal: "Pumpkin Spice Mocha",
+    tagline: "Every cup should feel like a warm hug",
     description:
-      "You know that less is more. While the world rushes, you pause. Your coffee is deliberate, uncluttered, and exactly enough.",
+      "Every cup is a moment to pause and feel warm from the inside out. You're the one who makes every gathering feel like home. Your coffee isn't just a drink — it's a ritual of comfort.",
+  },
+  "Mindful Purist": {
+    name: "Mindful Purist",
+    coffee: "Single Origin Black",
+    alsoTry: "Cortado",
+    seasonal: "Matcha with Oat Milk",
+    tagline: "Let the coffee speak for itself",
+    description:
+      "You believe quality speaks for itself. No syrup, no frills — just exceptional beans and careful preparation. You notice what others miss, and you wouldn't have it any other way.",
+  },
+  "Social Trailblazer": {
+    name: "Social Trailblazer",
+    coffee: "Cold Brew Flight",
+    alsoTry: "Iced Americano with Flavor Add-On",
+    seasonal: "Sparkling Honey Citrus Cold Brew",
+    tagline: "Coffee is better with company",
+    description:
+      "Coffee for you is about the people around the table. You're the one who organizes the meetups, brings the group together, and always orders something you can share. Community is your caffeine.",
   },
 };
 
@@ -60,27 +90,27 @@ export const questions: Question[] = [
     answers: [
       {
         text: "Kick it open immediately",
-        personality: "Bold Adventurer",
+        personality: "Bold Pioneer",
         backgroundImage:
           "https://images.unsplash.com/photo-1762532985810-33aa342a1133?w=1920&q=80",
       },
       {
-        text: "Make a snack first, then investigate",
-        personality: "Sweet Enthusiast",
+        text: "Grab a blanket and some snacks first, then investigate",
+        personality: "Cozy Campfire",
         backgroundImage:
           "https://images.unsplash.com/photo-1607919565782-d49c91cb46cd?w=1920&q=80",
       },
       {
-        text: "Check if there's a draft - good airflow matters",
-        personality: "Health Nut",
-        backgroundImage:
-          "https://images.unsplash.com/photo-1664129092841-3ec546212316?w=1920&q=80",
-      },
-      {
         text: "Sit quietly and listen for what's on the other side",
-        personality: "Zen Minimalist",
+        personality: "Mindful Purist",
         backgroundImage:
           "https://images.unsplash.com/photo-1610295399810-4964d7fdc693?w=1920&q=80",
+      },
+      {
+        text: "Text your friends to come explore it with you",
+        personality: "Social Trailblazer",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1920&q=80",
       },
     ],
   },
@@ -90,25 +120,25 @@ export const questions: Question[] = [
     answers: [
       {
         text: "An erupting volcano",
-        personality: "Bold Adventurer",
+        personality: "Bold Pioneer",
         backgroundImage:
           "https://images.unsplash.com/photo-1627277512894-73d76adfba72?w=1920&q=80",
       },
       {
-        text: "A candy shop from a dream you had",
-        personality: "Sweet Enthusiast",
+        text: "A cozy cabin with smoke curling from the chimney",
+        personality: "Smooth Traditionalist",
         backgroundImage:
-          "https://images.unsplash.com/photo-1753663049326-224a637489a4?w=1920&q=80",
+          "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=1920&q=80",
       },
       {
-        text: "A mountain trail at sunrise",
-        personality: "Health Nut",
+        text: "A map of all the places you haven't been yet",
+        personality: "Curious Explorer",
         backgroundImage:
           "https://images.unsplash.com/photo-1662817159871-0b4a03e8e01b?w=1920&q=80",
       },
       {
         text: "A single perfect circle",
-        personality: "Zen Minimalist",
+        personality: "Mindful Purist",
         backgroundImage:
           "https://images.unsplash.com/photo-1761904258305-a4044aebd362?w=1920&q=80",
       },
@@ -120,27 +150,27 @@ export const questions: Question[] = [
     answers: [
       {
         text: "We jumped out of planes for fun before we could cure the common cold",
-        personality: "Bold Adventurer",
+        personality: "Bold Pioneer",
         backgroundImage:
           "https://images.unsplash.com/photo-1665858843828-384327053055?w=1920&q=80",
       },
       {
-        text: "We invented dessert before dinner was even figured out",
-        personality: "Sweet Enthusiast",
+        text: "We keep doing the same morning ritual because it feels like home",
+        personality: "Smooth Traditionalist",
         backgroundImage:
           "https://images.unsplash.com/photo-1627308595171-d1b5d67129c4?w=1920&q=80",
       },
       {
-        text: "We run toward mountains just to say we reached the top",
-        personality: "Health Nut",
+        text: "We crossed oceans just to see what was on the other side",
+        personality: "Curious Explorer",
         backgroundImage:
-          "https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=1920&q=80",
+          "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1920&q=80",
       },
       {
-        text: "We spend our whole lives learning to be still",
-        personality: "Zen Minimalist",
+        text: "We built coffee shops so we'd have somewhere to be together",
+        personality: "Social Trailblazer",
         backgroundImage:
-          "https://images.unsplash.com/photo-1759067360054-1fe6f9640b67?w=1920&q=80",
+          "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80",
       },
     ],
   },
@@ -148,28 +178,28 @@ export const questions: Question[] = [
     question: "You wake up with a superpower. What is it?",
     answers: [
       {
-        text: "A healing factor that recovers from any wound",
-        personality: "Bold Adventurer",
+        text: "You can taste any dish from anywhere in the world just by thinking of it",
+        personality: "Curious Explorer",
         backgroundImage:
-          "https://images.unsplash.com/photo-1622117989692-c8adc3e9bcd4?w=1920&q=80",
+          "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80",
       },
       {
-        text: "You can conjure any dessert out of thin air",
-        personality: "Sweet Enthusiast",
+        text: "Every blanket you touch becomes the perfect temperature",
+        personality: "Cozy Campfire",
         backgroundImage:
           "https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=1920&q=80",
       },
       {
-        text: "You never need sleep and always feel rested",
-        personality: "Health Nut",
-        backgroundImage:
-          "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=1920&q=80",
-      },
-      {
         text: "You can stop time whenever you want",
-        personality: "Zen Minimalist",
+        personality: "Mindful Purist",
         backgroundImage:
           "https://images.unsplash.com/photo-1608303852360-97cb721e42cc?w=1920&q=80",
+      },
+      {
+        text: "You can speak every language fluently",
+        personality: "Social Trailblazer",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80",
       },
     ],
   },
@@ -178,27 +208,114 @@ export const questions: Question[] = [
     answers: [
       {
         text: "A falcon that follows your commands",
-        personality: "Bold Adventurer",
+        personality: "Bold Pioneer",
         backgroundImage:
           "https://images.unsplash.com/photo-1629837270594-fabe06c83d5d?w=1920&q=80",
       },
       {
-        text: "A golden retriever that bakes somehow",
-        personality: "Sweet Enthusiast",
+        text: "A golden retriever that greets you the same way every day",
+        personality: "Smooth Traditionalist",
         backgroundImage:
           "https://images.unsplash.com/photo-1693615775129-f2004d6e3e0b?w=1920&q=80",
       },
       {
-        text: "A dolphin that takes you on morning swims",
-        personality: "Health Nut",
+        text: "A chameleon that changes colors to match your mood",
+        personality: "Curious Explorer",
         backgroundImage:
-          "https://images.unsplash.com/photo-1686080186823-f61c47ded839?w=1920&q=80",
+          "https://images.unsplash.com/photo-1504450874802-0ba2bcd659e0?w=1920&q=80",
       },
       {
-        text: "A cat that cuddles you in silence",
-        personality: "Zen Minimalist",
+        text: "A dog that introduces you to every person in the park",
+        personality: "Social Trailblazer",
         backgroundImage:
-          "https://images.unsplash.com/photo-1761570956871-ab366d1ee7cf?w=1920&q=80",
+          "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1920&q=80",
+      },
+    ],
+  },
+  {
+    question: "Your ideal Saturday morning looks like...",
+    answers: [
+      {
+        text: "The same coffee shop, the same table, the same order",
+        personality: "Smooth Traditionalist",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1920&q=80",
+      },
+      {
+        text: "A new neighborhood, a new bakery, a new adventure",
+        personality: "Curious Explorer",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80",
+      },
+      {
+        text: "A blanket, a warm mug, and nowhere to be",
+        personality: "Cozy Campfire",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1528164344705-47542687000d?w=1920&q=80",
+      },
+      {
+        text: "A quiet walk, a single cup of something perfect",
+        personality: "Mindful Purist",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1759067360054-1fe6f9640b67?w=1920&q=80",
+      },
+    ],
+  },
+  {
+    question: "You're planning a road trip. You're most excited about...",
+    answers: [
+      {
+        text: "Driving roads with no GPS and no plan",
+        personality: "Bold Pioneer",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920&q=80",
+      },
+      {
+        text: "The snacks and playlists you've been curating for weeks",
+        personality: "Cozy Campfire",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=1920&q=80",
+      },
+      {
+        text: "The one intentional stop you've researched deeply",
+        personality: "Mindful Purist",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=1920&q=80",
+      },
+      {
+        text: "Convincing your whole friend group to come along",
+        personality: "Social Trailblazer",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1920&q=80",
+      },
+    ],
+  },
+  {
+    question: "A friend asks you to pick the restaurant. You choose...",
+    answers: [
+      {
+        text: "The neighborhood spot you've been going to for years",
+        personality: "Smooth Traditionalist",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80",
+      },
+      {
+        text: "That brand-new place with a menu you've never seen before",
+        personality: "Curious Explorer",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80",
+      },
+      {
+        text: "The cozy place with the fireplace and the big portions",
+        personality: "Cozy Campfire",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1664129092841-3ec546212316?w=1920&q=80",
+      },
+      {
+        text: "The quiet place with a small, perfect menu",
+        personality: "Mindful Purist",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1622117989692-c8adc3e9bcd4?w=1920&q=80",
       },
     ],
   },
